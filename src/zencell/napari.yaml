@@ -1,0 +1,54 @@
+name: zencell
+display_name: Zencell
+# use 'hidden' to remove plugin from napari hub search results
+visibility: public
+# see https://napari.org/stable/plugins/technical_references/manifest.html#fields for valid categories
+categories: ["Annotation", "Segmentation", "Acquisition"]
+contributions:
+  commands:
+    - id: zencell.get_reader
+      python_name: zencell._reader:napari_get_reader
+      title: Open data with Zencell
+    - id: zencell.write_multiple
+      python_name: zencell._writer:write_multiple
+      title: Save multi-layer data with Zencell
+    - id: zencell.write_single_image
+      python_name: zencell._writer:write_single_image
+      title: Save image data with Zencell
+    - id: zencell.make_sample_data
+      python_name: zencell._sample_data:make_sample_data
+      title: Load sample data from Zencell
+    - id: zencell.make_container_widget
+      python_name: zencell:ImageThreshold
+      title: Make threshold Container widget
+    - id: zencell.make_magic_widget
+      python_name: zencell:threshold_magic_widget
+      title: Make threshold magic widget
+    - id: zencell.make_function_widget
+      python_name: zencell:threshold_autogenerate_widget
+      title: Make threshold function widget
+    - id: zencell.make_qwidget
+      python_name: zencell:ExampleQWidget
+      title: Make example QWidget
+    - id: zencell.inference_ctx
+      python_name: zencell:InferQWidget
+      title: Inference with context
+  readers:
+    - command: zencell.get_reader
+      accepts_directories: false
+      filename_patterns: ['*.npy']
+  writers:
+    - command: zencell.write_multiple
+      layer_types: ['image*','labels*']
+      filename_extensions: []
+    - command: zencell.write_single_image
+      layer_types: ['image']
+      filename_extensions: ['.npy']
+  sample_data:
+    - command: zencell.make_sample_data
+      display_name: Zencell
+      key: unique_id.1
+  widgets:
+    - command: zencell.inference_ctx
+      display_name: Inference_ctx
+      #icon: zencell/_icons/inference.png
