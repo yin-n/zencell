@@ -84,4 +84,6 @@ venv/
 **/_version.py
 
 # ignore checkpoint which is too large
-src/zencell/zencell_model/checkpoint-4999.pth
+*.pth
+*.npy
+
