@@ -52,7 +52,7 @@ pip install fastremap
 python -m pip install "napari[all]"
 ```
 
-### clone this git hub repository
+### clone this github repository
 
 ```
 git clone https://github.com/yin-n/zencell.git
@@ -64,11 +64,8 @@ git clone https://github.com/yin-n/zencell.git
 ```
 cd zencell
 pip install -e .
+
 ```
-
-
-
-
 ## Usage
 
 ```
@@ -94,14 +91,15 @@ model checkpoints path: /mnt/aperto/yin/zencell_ckpt/checkpoint-4999.pth
 
 ![blocks](src/images/masks.webp)
 
-### It will have a whole brain view with a square show the area our model predicted in whole brain
+#### It will also have a whole brain view with a square show the area our model predicted in whole brain
 
 
 ![whole brain](src/images/whole_brain.webp)
 
 
 
-####  TODO install `zencell` via [pip]
+####  TODO 
+Implement install `zencell_plugin` via [pip].
 
 
 ## Contributing
